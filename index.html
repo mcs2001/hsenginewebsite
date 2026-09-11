@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HS Engineering | Emergency Cold Room Repair & Installation Malaysia</title>
+  
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    
+    :root {
+      --navy-deep: #0a192f;
+      --navy-primary: #1b365d;
+      --navy-accent: #254b85;
+      --navy-light: #4a77b5;
+      --navy-soft: #f0f4f8;
+      --white: #ffffff;
+      --gray-bg: #f8fafc;
+      --gray-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --transition-seamless: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family-base);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Keyframes */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatSeamless {
+      0%, 100% { transform: translateY(0px) rotate(0.001deg); }
+      50% { transform: translateY(-10px) rotate(0.001deg); }
+    }
+
+    @keyframes subtleGradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes shineSweep {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(200%) rotate(45deg); }
+    }
+
+    @keyframes tabFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.99);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 5%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition-seamless);
+    }
+
+    .navbar:hover {
+      box-shadow: 0 4px 20px rgba(10, 25, 47, 0.04);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-svg {
+      width: 175px;
+      height: auto;
+      transition: var(--transition-seamless);
+    }
+
+    .logo-container:hover .logo-svg {
+      transform: scale(1.02);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--navy-primary);
+      position: relative;
+      padding: 4px 0;
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--navy-light);
+      transition: var(--transition-seamless);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy-light);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .btn-cta {
+      background-color: var(--navy-primary);
+      color: var(--white);
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid var(--navy-primary);
+      transition: var(--transition-seamless);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--navy-deep);
+      border-color: var(--navy-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(10, 25, 47, 0.18);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      text-align: center;
+      padding: 4.5rem 1.5rem 2.5rem;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero-link {
+      color: var(--navy-primary);
+      font-style: italic;
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: var(--transition-seamless);
+      display: inline-block;
+    }
+
+    .hero-link:hover {
+      color: var(--navy-light);
+      transform: translateY(-2px);
+    }
+
+    /* Hero Visual Showcase */
+    .hero-visual-wrapper {
+      width: 100%;
+      background: linear-gradient(180deg, #ffffff 0%, var(--gray-bg) 100%);
+      padding: 2rem 1rem 4rem;
+      position: relative;
+    }
+
+    .hero-graphic-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+      background-size: 200% 200%;
+      animation: subtleGradientShift 12s ease infinite, floatSeamless 7s ease-in-out infinite;
+      border-radius: 12px;
+      border: 1px solid var(--gray-border);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.04);
+      transition: var(--transition-seamless);
+    }
+
+    .hero-graphic-container:hover {
+      box-shadow: 0 18px 45px rgba(10, 25, 47, 0.08);
+    }
+
+    .hero-illustration {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-badge-overlay {
+      position: absolute;
+      bottom: 22%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .btn-pill-action {
+      background-color: var(--navy-accent);
+      color: var(--white);
+      padding: 0.65rem 2.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(37, 75, 133, 0.28);
+      transition: var(--transition-seamless);
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-pill-action:hover {
+      background-color: var(--navy-deep);
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 10px 25px rgba(10, 25, 47, 0.35);
+    }
+
+    .section-headline-banner {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background: var(--white);
+    }
+
+    .section-headline-banner h2 {
+      font-size: 1.85rem;
+      color: var(--navy-deep);
+      font-weight: 700;
+    }
+
+    .section-headline-banner p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Industry Solutions Grid */
+    .industries-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .industries-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .industries-header h2 {
+      font-size: 2rem;
+      color: var(--navy-deep);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .industries-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 850px;
+    }
+
+    .grid-3x2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card-industry {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 220px;
+      background-color: var(--navy-primary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: var(--transition-seamless);
+      cursor: pointer;
+    }
+
+    .card-industry::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 70%
+      );
+      transform: rotate(45deg);
+      transition: var(--transition-seamless);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .card-industry:hover {
+      transform: translateY(-7px) scale(1.01);
+      box-shadow: 0 16px 32px rgba(10, 25, 47, 0.22);
+    }
+
+    .card-industry:hover::after {
+      opacity: 1;
+      animation: shineSweep 1.2s ease-out;
+    }
+
+    .card-industry img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.82;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+
+    .card-industry:hover img {
+      opacity: 0.65;
+      transform: scale(1.08);
+    }
+
+    .card-industry-title {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      z-index: 2;
+      transition: var(--transition-seamless);
+    }
+
+    .card-industry:hover .card-industry-title {
+      transform: translateX(4px);
+    }
+
+    /* Process Workflow Section */
+    .process-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .process-section h2 {
+      font-size: 2rem;
+      color: var(--navy-deep);
+      margin-bottom: 3.5rem;
+      font-weight: 700;
+    }
+
+    .process-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+
+    .step-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      transition: var(--transition-seamless);
+    }
+
+    .step-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .step-illustration-box {
+      width: 100%;
+      height: 160px;
+      background-color: var(--white);
+      border-radius: 10px;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gray-border);
+      padding: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      transition: var(--transition-seamless);
+    }
+
+    .step-illustration-box svg {
+      transition: var(--transition-seamless);
+    }
+
+    .step-card:hover .step-illustration-box {
+      border-color: var(--navy-light);
+      box-shadow: 0 12px 24px rgba(37, 75, 133, 0.12);
+      background-color: #fafbfc;
+    }
+
+    .step-card:hover .step-illustration-box svg {
+      transform: scale(1.08) translateY(-2px);
+    }
+
+    .step-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--navy-primary);
+      margin-bottom: 0.3rem;
+      transition: var(--transition-fast);
+    }
+
+    .step-card:hover .step-number {
+      color: var(--navy-light);
+    }
+
+    .step-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Tabs Section */
+    .tabs-section {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .tabs-section h2 {
+      text-align: center;
+      font-size: 1.9rem;
+      color: var(--navy-deep);
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .tab-navigation {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--gray-border);
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+
+    .tab-button {
+      background: none;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+      white-space: nowrap;
+      transition: var(--transition-seamless);
+    }
+
+    .tab-button:hover {
+      color: var(--navy-primary);
+    }
+
+    .tab-button.active {
+      color: var(--navy-primary);
+      font-weight: 700;
+    }
+
+    .tab-button::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0%;
+      height: 3px;
+      background-color: var(--navy-primary);
+      border-radius: 3px 3px 0 0;
+      transition: var(--transition-seamless);
+      transform: translateX(-50%);
+    }
+
+    .tab-button.active::after {
+      width: 100%;
+    }
+
+    .tab-content-panel {
+      display: none;
+    }
+
+    .tab-content-panel.active {
+      display: block;
+      animation: tabFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .tab-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .tab-media-box {
+      width: 100%;
+      height: 330px;
+      background-color: var(--navy-soft);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--gray-border);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+      transition: var(--transition-seamless);
+    }
+
+    .tab-media-box:hover {
+      box-shadow: 0 10px 25px rgba(10, 25, 47, 0.08);
+    }
+
+    .tab-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .tab-media-box:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Bottom Navy CTA Section */
+    .cta-banner-navy {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
+      color: var(--white);
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner-navy h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .cta-banner-navy p {
+      color: #cbd5e1;
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn-pill-navy-cta {
+      background-color: var(--navy-light);
+      color: var(--white);
+      padding: 0.75rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: var(--transition-seamless);
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-pill-navy-cta:hover {
+      background-color: var(--white);
+      color: var(--navy-deep);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--navy-deep);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2.2rem 1rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer p {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .process-steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grid-3x2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .process-steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .grid-3x2 {
+        grid-template-columns: 1fr;
+      }
+      .tab-navigation {
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="logo-container">
+      <svg class="logo-svg" viewBox="0 0 190 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="5" width="30" height="30" rx="4" fill="#1B365D"/>
+        <!-- Snowflake / Refrigeration Icon -->
+        <path d="M17 10 V30 M10 17 H24 M12 12 L22 22 M12 22 L22 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+        <text x="40" y="25" font-family="'Inter', sans-serif" font-weight="800" font-size="16" fill="#1B365D" letter-spacing="0.5">HS ENGINEERING</text>
+      </svg>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About HS Engineering</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a href="https://wa.me/60126382504" target="_blank" class="btn-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      +60 12-638 2504
+    </a>
+  </header>
+
+  <!-- Section 1: Hero Text Header -->
+  <section class="hero-section animate-fade-in" id="home">
+    <h1 class="hero-title">Emergency Cold Room Repairing & Custom Refrigeration Solutions Across Malaysia</h1>
+    <p class="hero-subtitle">
+      At HS Engineering, we deliver 24/7 fast diagnostics, custom walk-in chiller setup, blast freezer installation, and high-density PUF insulation for commercial businesses nationwide.
+    </p>
+    <a href="solutions.html" class="hero-link">Explore Cold Storage Capabilities</a>
+  </section>
+
+  <!-- Section 2: Hero Visual / Banner Showcase -->
+  <div class="hero-visual-wrapper">
+    <div class="hero-graphic-container">
+      <!-- Cold Storage Visual Vector Illustration -->
+      <svg class="hero-illustration" viewBox="0 0 900 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="900" height="320" fill="#F0F4F8" rx="8"/>
+        <!-- Blueprint Grid -->
+        <path d="M50 0 V320 M150 0 V320 M250 0 V320 M350 0 V320 M450 0 V320 M550 0 V320 M650 0 V320 M750 0 V320 M850 0 V320" stroke="#E2E8F0" stroke-width="1"/>
+        <path d="M0 40 H900 M0 100 H900 M0 160 H900 M0 220 H900 M0 280 H900" stroke="#E2E8F0" stroke-width="1"/>
+
+        <!-- Cold Room Enclosure Wall (PUF Panels) -->
+        <rect x="100" y="60" width="360" height="200" rx="4" fill="#FFFFFF" stroke="#1B365D" stroke-width="3"/>
+        <line x1="160" y1="60" x2="160" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="220" y1="60" x2="220" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="280" y1="60" x2="280" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="340" y1="60" x2="340" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="400" y1="60" x2="400" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+        
+        <!-- Insulated Door Handle -->
+        <rect x="420" y="130" width="10" height="60" fill="#254B85" rx="2"/>
+
+        <!-- Condensing Unit & Evaporator Coil -->
+        <rect x="520" y="80" width="260" height="180" rx="6" fill="#1B365D"/>
+        <circle cx="590" cy="170" r="45" fill="#254B85" stroke="#FFFFFF" stroke-width="3"/>
+        <path d="M590 135 V205 M555 170 H625" stroke="#FFFFFF" stroke-width="3"/>
+        
+        <!-- Pipework Cooling Lines -->
+        <path d="M460 110 H520 M460 210 H520" stroke="#4A77B5" stroke-width="4" stroke-linecap="round"/>
+        
+        <!-- Temperature Indicator Gauge -->
+        <rect x="670" y="100" width="80" height="40" fill="#0A192F" rx="4"/>
+        <text x="682" y="125" font-family="'Inter', monospace" font-weight="700" font-size="16" fill="#64FFDA">-18°C</text>
+      </svg>
+
+      <!-- Center Action Badge -->
+      <div class="hero-badge-overlay">
+        <a href="https://wa.me/60126382504" target="_blank" class="btn-pill-action">Get Urgent Repair</a>
+      </div>
+    </div>
+
+    <div class="section-headline-banner">
+      <h2>24/7 Rapid Diagnostics & Commercial Cold Storage Excellence</h2>
+      <p>Protecting perishable inventory with fast compressor fixes, gas leak sealing, and custom chillers</p>
+    </div>
+  </div>
+
+  <!-- Section 3: Industry Solutions Grid -->
+  <section class="industries-section" id="solutions">
+    <div class="industries-header">
+      <h2>Specialized Cold Room Repairing & Custom Installation Types</h2>
+      <p>
+        Whether servicing supermarkets, hotels, medical centers, or agricultural hubs, HS Engineering engineers reliable temperature-controlled environments tailored to your exact industry operational standards.
+      </p>
+    </div>
+
+    <div class="grid-3x2">
+      <div class="card-industry">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" alt="Walk-In Freezers & Chillers">
+        <div class="card-industry-title">Walk-In Freezers & Chillers</div>
+      </div>
+      <div class="card-industry">
+        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Medical Cold Rooms">
+        <div class="card-industry-title">Medical & Laboratory Cold Storage</div>
+      </div>
+      <div class="card-industry">
+        <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Blast Freezers">
+        <div class="card-industry-title">Blast Freezers & Rapid Cooling</div>
+      </div>
+      <div class="card-industry">
+        <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=600&q=80" alt="Commercial Agriculture Storage">
+        <div class="card-industry-title">Agriculture & Produce Storage</div>
+      </div>
+      <div class="card-industry">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Turnkey Cold Storage Projects">
+        <div class="card-industry-title">Turnkey Commercial Projects</div>
+      </div>
+      <div class="card-industry">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Refrigeration Maintenance">
+        <div class="card-industry-title">24/7 Emergency Repair & Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Step-by-Step Workflow Process -->
+  <section class="process-section" id="services">
+    <h2>Rapid Emergency Response & System Installation Workflow</h2>
+    
+    <div class="process-steps-grid">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-illustration-box">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <rect x="20" y="20" width="60" height="60" rx="6" stroke="#1B365D" stroke-width="2" fill="#F0F4F8"/>
+            <path d="M30 40 H70 M30 55 H55" stroke="#1B365D" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="65" cy="55" r="4" fill="#254B85"/>
+          </svg>
+        </div>
+        <div class="step-number">01.</div>
+        <div class="step-text">Contact our 24/7 emergency technician via WhatsApp or phone</div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-illustration-box">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <path d="M20 75 L50 25 L80 75 Z" stroke="#1B365D" stroke-width="2" fill="#FFFFFF"/>
+            <line x1="32" y1="55" x2="68" y2="55" stroke="#254B85" stroke-width="2"/>
+            <circle cx="50" cy="40" r="5" fill="#1B365D"/>
+          </svg>
+        </div>
+        <div class="step-number">02.</div>
+        <div class="step-text">Fast on-site inspection, diagnostic, & compressor assessment</div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-illustration-box">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <rect x="25" y="20" width="50" height="60" rx="2" stroke="#1B365D" stroke-width="2" fill="#FFFFFF"/>
+            <line x1="35" y1="35" x2="65" y2="35" stroke="#254B85" stroke-width="2"/>
+            <line x1="35" y1="45" x2="60" y2="45" stroke="#254B85" stroke-width="2"/>
+            <line x1="35" y1="55" x2="50" y2="55" stroke="#254B85" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="step-number">03.</div>
+        <div class="step-text">Receive an explicit repair quotation or custom system layout proposal</div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-illustration-box">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <path d="M25 65 L45 35 L60 50 L80 20" stroke="#1B365D" stroke-width="3" stroke-linecap="round"/>
+            <rect x="20" y="70" width="60" height="10" rx="2" fill="#254B85"/>
+          </svg>
+        </div>
+        <div class="step-number">04.</div>
+        <div class="step-text">Execute compressor fixing, coil cleaning, or PUF panel setup</div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-card">
+        <div class="step-illustration-box">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="28" stroke="#1B365D" stroke-width="2.5" fill="#F0F4F8"/>
+            <path d="M40 50 L47 57 L62 42" stroke="#254B85" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="step-number">05.</div>
+        <div class="step-text">Testing, temperature stabilization, & scheduled AMC support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Stats & Interactive Tabs -->
+  <section class="tabs-section" id="about">
+    <h2>Proven Expertise in Commercial Refrigeration</h2>
+    
+    <div class="tab-navigation">
+      <button class="tab-button active" onclick="switchTab(0)">500+ Repairs Completed</button>
+      <button class="tab-button" onclick="switchTab(1)">300+ Commercial Installs</button>
+      <button class="tab-button" onclick="switchTab(2)">98% Client Satisfaction</button>
+      <button class="tab-button" onclick="switchTab(3)">Component Assemblies</button>
+      <button class="tab-button" onclick="switchTab(4)">Annual Maintenance (AMC)</button>
+    </div>
+
+    <!-- Tab 1 Panel -->
+    <div class="tab-content-panel active">
+      <p class="tab-description">
+        Over 500 emergency cold room repairs completed across Malaysia by HS Engineering. We swiftly fix severe compressor faults, gas leaks, and temperature fluctuations to prevent inventory loss.
+      </p>
+      <div class="tab-media-box">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="Cold Room Emergency Repair">
+      </div>
+    </div>
+
+    <!-- Tab 2 Panel -->
+    <div class="tab-content-panel">
+      <p class="tab-description">
+        300+ turnkey commercial installations designed, built, and commissioned. End-to-end setups tailored for restaurants, hotels, supermarkets, and medical facilities.
+      </p>
+      <div class="tab-media-box">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80" alt="Turnkey Cold Room Installation">
+      </div>
+    </div>
+
+    <!-- Tab 3 Panel -->
+    <div class="tab-content-panel">
+      <p class="tab-description">
+        HS Engineering delivers quality technical work backed by a 98% client satisfaction rate for fast response times, energy efficiency, and long-lasting cooling repairs.
+      </p>
+      <div class="tab-media-box">
+        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80" alt="High Client Satisfaction Rate">
+      </div>
+    </div>
+
+    <!-- Tab 4 Panel -->
+    <div class="tab-content-panel" id="components">
+      <p class="tab-description">
+        Full component repair and supply: High-density PUF wall/ceiling panels, condensing units, evaporators, sliding/hinged insulated doors, heater wires, and gasket seals.
+      </p>
+      <div class="tab-media-box">
+        <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80" alt="PUF Panels and Compressors">
+      </div>
+    </div>
+
+    <!-- Tab 5 Panel -->
+    <div class="tab-content-panel">
+      <p class="tab-description">
+        Preventative Annual Cold Room Maintenance (AMC), scheduled condenser & evaporator coil cleaning, and 24/7 technical troubleshooting support across Malaysia.
+      </p>
+      <div class="tab-media-box">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80" alt="Preventative Cold Storage Maintenance">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Dark Navy Bottom CTA Banner -->
+  <section class="cta-banner-navy" id="contact">
+    <h2>Need Urgent Cold Room Repairing or Installation?</h2>
+    <p>Contact HS Engineering for immediate assistance across Malaysia</p>
+    <a href="https://wa.me/60126382504" target="_blank" class="btn-pill-navy-cta">Get A Free Quote</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 HS Engineering. All rights reserved.</p>
+    <p>Email: contact@hsengineering.my | Phone / WhatsApp: +60 12-638 2504</p>
+  </footer>
+
+  <!-- Tab Switching Script -->
+  <script>
+    function switchTab(index) {
+      const buttons = document.querySelectorAll('.tab-button');
+      const panels = document.querySelectorAll('.tab-content-panel');
+
+      buttons.forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      panels.forEach((panel, i) => {
+        if (i === index) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

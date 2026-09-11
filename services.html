@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigeration Engineering Services | HS Engineering Malaysia</title>
+  <style>
+    :root {
+      --navy-deep: #0a192f;
+      --navy-primary: #1b365d;
+      --navy-accent: #254b85;
+      --navy-light: #4a77b5;
+      --navy-soft: #f0f4f8;
+      --white: #ffffff;
+      --gray-bg: #f8fafc;
+      --gray-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --transition-seamless: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--white);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Seamless Keyframe Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(37, 75, 133, 0.08); }
+      50% { box-shadow: 0 0 30px rgba(74, 119, 181, 0.22); }
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 5%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition-seamless);
+    }
+
+    .navbar:hover {
+      box-shadow: 0 4px 20px rgba(10, 25, 47, 0.04);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-svg {
+      width: 175px;
+      height: auto;
+      transition: var(--transition-seamless);
+    }
+
+    .logo-container:hover .logo-svg {
+      transform: scale(1.02);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--navy-primary);
+      position: relative;
+      padding: 4px 0;
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--navy-light);
+      transition: var(--transition-seamless);
+      border-radius: 2px;
+    }
+
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy-light);
+    }
+
+    .btn-cta {
+      background-color: var(--navy-primary);
+      color: var(--white);
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid var(--navy-primary);
+      transition: var(--transition-seamless);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .btn-cta:hover {
+      background-color: var(--navy-deep);
+      border-color: var(--navy-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(10, 25, 47, 0.18);
+    }
+
+    /* Page Header */
+    .services-hero {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 70%, var(--navy-accent) 100%);
+      color: var(--white);
+      padding: 4.5rem 5% 5.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(74, 119, 181, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .services-hero-content {
+      max-width: 850px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .services-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .services-hero p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* SECTION 1: Interactive Tabbed Service Showcase */
+    .service-showcase-section {
+      max-width: 1200px;
+      margin: -3rem auto 5rem;
+      padding: 0 5%;
+      position: relative;
+      z-index: 10;
+    }
+
+    .tab-navigation {
+      display: flex;
+      justify-content: center;
+      background: var(--white);
+      padding: 0.5rem;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(10, 25, 47, 0.08);
+      border: 1px solid var(--gray-border);
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      background: transparent;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-seamless);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .tab-btn.active {
+      background: var(--navy-primary);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(27, 54, 93, 0.25);
+    }
+
+    .tab-btn:hover:not(.active) {
+      background: var(--navy-soft);
+      color: var(--navy-primary);
+    }
+
+    .tab-content-panel {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .tab-content-panel.active {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .panel-details h2 {
+      font-size: 2rem;
+      color: var(--navy-deep);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .panel-details p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .spec-item {
+      background: var(--navy-soft);
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--navy-light);
+    }
+
+    .spec-item label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--navy-accent);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .spec-item span {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+
+    .panel-graphic {
+      background: var(--gray-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--gray-border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel-graphic svg {
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+    }
+
+    /* SECTION 2: Interactive Cold Storage Calculator */
+    .calculator-section {
+      background: var(--navy-soft);
+      padding: 5rem 5%;
+      border-top: 1px solid var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .calc-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid var(--gray-border);
+      padding: 3rem;
+      box-shadow: 0 15px 35px rgba(10, 25, 47, 0.05);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .calc-inputs h2 {
+      font-size: 1.8rem;
+      color: var(--navy-deep);
+      margin-bottom: 0.75rem;
+      font-weight: 800;
+    }
+
+    .calc-inputs p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--gray-border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: var(--gray-bg);
+      color: var(--text-main);
+      outline: none;
+      transition: var(--transition-fast);
+    }
+
+    .form-control:focus {
+      border-color: var(--navy-light);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(74, 119, 181, 0.15);
+    }
+
+    .calc-results {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .result-box {
+      margin-bottom: 1.5rem;
+    }
+
+    .result-box label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .result-box .value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .result-note {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1rem;
+    }
+
+    /* SECTION 3: Standard Engineering Workflow Process */
+    .workflow-section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--navy-deep);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+      padding: 1.8rem 1.2rem;
+      position: relative;
+      transition: var(--transition-seamless);
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(10, 25, 47, 0.06);
+      border-color: var(--navy-light);
+    }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--navy-soft);
+      color: var(--navy-primary);
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid var(--navy-light);
+    }
+
+    .step-card h3 {
+      font-size: 1.1rem;
+      color: var(--navy-deep);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .step-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* SECTION 4: Interactive Fault Matrix Table */
+    .matrix-section {
+      max-width: 1100px;
+      margin: 5rem auto;
+      padding: 0 5%;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid var(--gray-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    }
+
+    .matrix-table th {
+      background: var(--navy-primary);
+      color: var(--white);
+      padding: 1.2rem 1.5rem;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .matrix-table td {
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid var(--gray-border);
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: var(--white);
+    }
+
+    .matrix-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .matrix-table tr:nth-child(even) td {
+      background: var(--gray-bg);
+    }
+
+    .tag-status {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .tag-critical { background: #fee2e2; color: #991b1b; }
+    .tag-warning { background: #fef3c7; color: #92400e; }
+
+    /* SECTION 5: Fast Service Dispatch Portal */
+    .action-portal-section {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-primary) 100%);
+      color: var(--white);
+      padding: 5rem 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .action-portal-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .action-portal-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .action-portal-header p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+
+    .action-cards-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .action-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-seamless);
+    }
+
+    .action-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: var(--navy-light);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .action-badge {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .badge-urgent { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .badge-audit { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+    .badge-project { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    .action-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--white);
+    }
+
+    .action-card p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .btn-action-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition-seamless);
+      text-align: center;
+    }
+
+    .btn-action-primary {
+      background-color: var(--white);
+      color: var(--navy-deep);
+    }
+
+    .btn-action-primary:hover {
+      background-color: var(--navy-soft);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-action-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-action-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: var(--white);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--navy-deep);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2.2rem 1rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer p {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .tab-content-panel.active { grid-template-columns: 1fr; }
+      .calc-container { grid-template-columns: 1fr; }
+      .workflow-steps { grid-template-columns: 1fr 1fr; }
+      .action-cards-container { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .tab-navigation { flex-direction: column; }
+      .workflow-steps { grid-template-columns: 1fr; }
+      .services-hero h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
+        <svg class="logo-svg" viewBox="0 0 190 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="5" width="30" height="30" rx="4" fill="#1B365D"/>
+          <path d="M17 10 V30 M10 17 H24 M12 12 L22 22 M12 22 L22 12" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+          <text x="40" y="25" font-family="sans-serif" font-weight="800" font-size="16" fill="#1B365D" letter-spacing="0.5">HS ENGINEERING</text>
+        </svg>
+      </a>
+    </div>
+    <ul class="nav-links">
+       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About HS Engineering</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <a href="https://wa.me/60126382504" target="_blank" class="btn-cta">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      +60 12-638 2504
+    </a>
+  </header>
+
+  <!-- Page Header -->
+  <section class="services-hero">
+    <div class="services-hero-content">
+      <h1>Refrigeration & Cold Storage Services</h1>
+      <p>From 24/7 emergency repair dispatch to turnkey cold room installations and proactive maintenance engineering across Malaysia.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 1: Interactive Tabbed Service Showcase -->
+  <section class="service-showcase-section">
+    
+    <div class="tab-navigation">
+      <button class="tab-btn active" onclick="switchTab(event, 'tab-repair')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        1. Emergency Repairs
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-install')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        2. Turnkey Installation
+      </button>
+      <button class="tab-btn" onclick="switchTab(event, 'tab-amc')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        3. Preventive Maintenance (AMC)
+      </button>
+    </div>
+
+    <!-- Tab Panel 1: Emergency Repairs -->
+    <div id="tab-repair" class="tab-content-panel active">
+      <div class="panel-details">
+        <h2>Cold Room & Refrigeration Repair</h2>
+        <p>Rapid diagnostic and breakdown restoration for commercial cold rooms, walk-in freezers, and industrial chillers experiencing thermal loss or compressor fault.</p>
+        
+        <div class="spec-grid">
+          <div class="spec-item">
+            <label>Response Window</label>
+            <span>Under 2-4 Hours</span>
+          </div>
+          <div class="spec-item">
+            <label>Compressors Handled</label>
+            <span>Copeland, Bitzer, Danfoss</span>
+          </div>
+          <div class="spec-item">
+            <label>Common Diagnostics</label>
+            <span>Gas Leak, Ice Build, Pressure Trip</span>
+          </div>
+          <div class="spec-item">
+            <label>Coverage</label>
+            <span>Klang Valley & West Malaysia</span>
+          </div>
+        </div>
+
+        <a href="#service-portal" class="btn-cta">Dispatch Technician Now</a>
+      </div>
+      <div class="panel-graphic">
+        <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="350" height="220" rx="8" fill="#FFFFFF"/>
+          <rect x="20" y="20" width="310" height="180" rx="6" fill="#F8FAFC" stroke="#1B365D" stroke-width="2"/>
+          <circle cx="100" cy="110" r="40" fill="#1B365D"/>
+          <path d="M100 85 V135 M75 110 H125" stroke="#FFFFFF" stroke-width="3"/>
+          <rect x="170" y="70" width="130" height="15" rx="3" fill="#4A77B5"/>
+          <rect x="170" y="100" width="100" height="15" rx="3" fill="#254B85"/>
+          <rect x="170" y="130" width="120" height="15" rx="3" fill="#1B365D"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Tab Panel 2: Turnkey Installation -->
+    <div id="tab-install" class="tab-content-panel">
+      <div class="panel-details">
+        <h2>Custom Cold Storage Construction</h2>
+        <p>End-to-end engineering of walk-in chillers, blast freezers, and cleanrooms tailored to food processing, pharmaceutical, and logistics specifications.</p>
+        
+        <div class="spec-grid">
+          <div class="spec-item">
+            <label>Insulation Panels</label>
+            <span>PUF High Density (40-42kg/m³)</span>
+          </div>
+          <div class="spec-item">
+            <label>Temp Ranges</label>
+            <span>+15°C down to -40°C</span>
+          </div>
+          <div class="spec-item">
+            <label>Door Systems</label>
+            <span>Sliding, Swing, Air Curtain</span>
+          </div>
+          <div class="spec-item">
+            <label>Control Systems</label>
+            <span>Digital Microprocessor PLC</span>
+          </div>
+        </div>
+
+        <a href="#service-portal" class="btn-cta">Request Design Proposal</a>
+      </div>
+      <div class="panel-graphic">
+        <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="350" height="220" rx="8" fill="#FFFFFF"/>
+          <rect x="30" y="30" width="290" height="160" rx="6" fill="#F0F4F8" stroke="#254B85" stroke-width="2"/>
+          <path d="M30 30 L100 10 H250 L320 30" fill="none" stroke="#1B365D" stroke-width="2"/>
+          <rect x="120" y="70" width="110" height="120" fill="#1B365D"/>
+          <circle cx="210" cy="130" r="4" fill="#FFFFFF"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Tab Panel 3: Maintenance (AMC) -->
+    <div id="tab-amc" class="tab-content-panel">
+      <div class="panel-details">
+        <h2>Preventive Maintenance Contracts (AMC)</h2>
+        <p>Scheduled quarterly health audits and cleaning programs designed to prevent sudden compressor burnouts, refrigerant leakage, and excessive electrical consumption.</p>
+        
+        <div class="spec-grid">
+          <div class="spec-item">
+            <label>Service Frequency</label>
+            <span>Bi-monthly or Quarterly</span>
+          </div>
+          <div class="spec-item">
+            <label>Coil Cleaning</label>
+            <span>Chemical & High-Pressure Flush</span>
+          </div>
+          <div class="spec-item">
+            <label>Energy Savings</label>
+            <span>Up to 18% Reduced Overhead</span>
+          </div>
+          <div class="spec-item">
+            <label>Priority SLA</label>
+            <span>Guaranteed Standby Team</span>
+          </div>
+        </div>
+
+        <a href="#service-portal" class="btn-cta">Inquire AMC Pricing</a>
+      </div>
+      <div class="panel-graphic">
+        <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="350" height="220" rx="8" fill="#FFFFFF"/>
+          <circle cx="175" cy="110" r="60" stroke="#1B365D" stroke-width="4" fill="none"/>
+          <path d="M175 60 V110 L210 130" stroke="#254B85" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="175" cy="110" r="8" fill="#4A77B5"/>
+        </svg>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION 2: Interactive Cold Storage Spec Calculator -->
+  <section class="calculator-section">
+    <div class="calc-container">
+      <div class="calc-inputs">
+        <h2>Cold Storage Sizing Guide</h2>
+        <p>Select your intended application to review estimated operating temperature requirements and recommended panel specifications.</p>
+        
+        <div class="form-group">
+          <label for="calc-type">Storage Application</label>
+          <select id="calc-type" class="form-control" onchange="calculateSpecs()">
+            <option value="chiller">Chilled Products (Fruits, Vegetables, Dairy)</option>
+            <option value="freezer">Frozen Foods (Meat, Poultry, Seafood)</option>
+            <option value="blast">Blast Freezing (Rapid Flash Freeze)</option>
+            <option value="cleanroom">Cleanroom / Pharma (Controlled Temp)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="calc-size">Estimated Room Volume (Cubic Meters)</label>
+          <input type="number" id="calc-size" class="form-control" value="50" min="10" max="1000" oninput="calculateSpecs()">
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <div>
+          <div class="result-box">
+            <label>Recommended Operating Temp</label>
+            <div class="value" id="res-temp">+2°C to +8°C</div>
+          </div>
+          <div class="result-box">
+            <label>Recommended PUF Panel Thickness</label>
+            <div class="value" id="res-panel">75mm - 100mm</div>
+          </div>
+        </div>
+        <div class="result-note">
+          *Note: Final refrigeration horse-power (HP) depends on daily product load frequency and ambient room environment.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Standard Workflow Process -->
+  <section class="workflow-section">
+    <div class="section-title">
+      <h2>Our Engineering Workflow</h2>
+      <p>How we ensure maximum thermal efficiency and minimum operational disruption on every project.</p>
+    </div>
+
+    <div class="workflow-steps">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Site Audit & Load Calculation</h3>
+        <p>We evaluate your ambient conditions, load turnover, and existing electrical infrastructure.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>System Selection</h3>
+        <p>Matching the correct compressor capacity and coil configuration for optimum power draw.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Precision Assembly</h3>
+        <p>Airtight PUF panel interlocking, copper piping layout, and high-vacuum evacuation.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Testing & Sign-off</h3>
+        <p>48-hour continuous temperature logging, thermal imaging, and client operational hand-off.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Interactive Fault Matrix Table -->
+  <section class="matrix-section">
+    <div class="section-title">
+      <h2>Refrigeration Fault Troubleshooting Matrix</h2>
+      <p>Common commercial refrigeration breakdown indicators and our engineered solutions.</p>
+    </div>
+
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Symptom Observed</th>
+          <th>Potential Root Cause</th>
+          <th>Impact Level</th>
+          <th>HS Engineering Solution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Temperature Rising / Warm Room</strong></td>
+          <td>Refrigerant gas leak or compressor valve fatigue</td>
+          <td><span class="tag-status tag-critical">Critical</span></td>
+          <td>Nitrogen pressure test, leak seal, gas recharge & valve replacement</td>
+        </tr>
+        <tr>
+          <td><strong>Evaporator Coil Icing Up</strong></td>
+          <td>Defrost heater failure or blocked expansion valve</td>
+          <td><span class="tag-status tag-warning">Warning</span></td>
+          <td>Defrost element replacement, expansion valve calibration & coil flush</td>
+        </tr>
+        <tr>
+          <td><strong>Excessive Compressor Noise</strong></td>
+          <td>Oil breakdown or mechanical bearing wear</td>
+          <td><span class="tag-status tag-critical">Critical</span></td>
+          <td>Oil analysis, crankcase heater check, or full compressor overhaul</td>
+        </tr>
+        <tr>
+          <td><strong>Water Dripping Inside Room</strong></td>
+          <td>Drain line blockage or faulty floor insulation seal</td>
+          <td><span class="tag-status tag-warning">Warning</span></td>
+          <td>Drain line heater tape installation and PUF joint re-sealing</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 5: Fast Service Dispatch Portal -->
+  <section class="action-portal-section" id="service-portal">
+    <div class="action-portal-header">
+      <h2>Request Service or Engineering Support</h2>
+      <p>Select your operational requirement to connect directly with our technical team via WhatsApp.</p>
+    </div>
+
+    <div class="action-cards-container">
+      
+      <!-- Action 1: Breakdown -->
+      <div class="action-card">
+        <div>
+          <span class="action-badge badge-urgent">Priority Emergency</span>
+          <h3>Emergency Repair Dispatch</h3>
+          <p>Sudden cooling failure or alarm trip? Request immediate on-site technician dispatch.</p>
+        </div>
+        <a href="https://wa.me/60126382504?text=Hi%20HS%20Engineering,%20I%20have%20an%20urgent%20cold%20room%20breakdown." target="_blank" class="btn-action-card btn-action-primary">
+          Dispatch Repairs (+60 12-638 2504)
+        </a>
+      </div>
+
+      <!-- Action 2: AMC -->
+      <div class="action-card">
+        <div>
+          <span class="action-badge badge-audit">Maintenance</span>
+          <h3>Preventive Maintenance (AMC)</h3>
+          <p>Schedule a routine chemical wash, gas pressure check, and electrical audit for your facility.</p>
+        </div>
+        <a href="https://wa.me/60126382504?text=Hi%20HS%20Engineering,%20I%20would%20like%20to%20inquire%20about%20a%20Preventive%20Maintenance%20AMC%20contract." target="_blank" class="btn-action-card btn-action-secondary">
+          Schedule AMC Inspection
+        </a>
+      </div>
+
+      <!-- Action 3: New Build -->
+      <div class="action-card">
+        <div>
+          <span class="action-badge badge-project">Custom Build</span>
+          <h3>New Cold Room Project</h3>
+          <p>Get a custom quotation for walk-in freezer construction, panel installation, or unit sizing.</p>
+        </div>
+        <a href="https://wa.me/60126382504?text=Hi%20HS%20Engineering,%20I%20would%20like%20a%20quote%20for%20a%20new%20cold%20room%20project." target="_blank" class="btn-action-card btn-action-secondary">
+          Request Project Quotation
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 HS Engineering. All rights reserved.</p>
+    <p>Email: contact@hsengineering.my | Phone / WhatsApp: +60 12-638 2504</p>
+  </footer>
+
+  <!-- Scripts for Tabs & Calculator -->
+  <script>
+    // Tab switching script
+    function switchTab(evt, tabId) {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabPanels = document.querySelectorAll('.tab-content-panel');
+
+      tabBtns.forEach(btn => btn.classList.remove('active'));
+      tabPanels.forEach(panel => panel.classList.remove('active'));
+
+      evt.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Calculator logic
+    function calculateSpecs() {
+      const type = document.getElementById('calc-type').value;
+      const resTemp = document.getElementById('res-temp');
+      const resPanel = document.getElementById('res-panel');
+
+      if (type === 'chiller') {
+        resTemp.textContent = "+2°C to +8°C";
+        resPanel.textContent = "75mm - 100mm PUF";
+      } else if (type === 'freezer') {
+        resTemp.textContent = "-18°C to -25°C";
+        resPanel.textContent = "120mm - 150mm PUF";
+      } else if (type === 'blast') {
+        resTemp.textContent = "-35°C to -40°C";
+        resPanel.textContent = "150mm - 200mm PUF";
+      } else if (type === 'cleanroom') {
+        resTemp.textContent = "+18°C to +22°C";
+        resPanel.textContent = "50mm - 75mm Cleanroom Panel";
+      }
+    }
+  </script>
+
+</body>
+</html>
